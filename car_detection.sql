@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 17, 2021 at 09:52 PM
+-- Generation Time: May 18, 2021 at 04:46 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -34,6 +34,27 @@ CREATE TABLE IF NOT EXISTS `car_count` (
   `CarCount` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+DROP TABLE IF EXISTS `videos`;
+CREATE TABLE IF NOT EXISTS `videos` (
+  `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `VideoName` varchar(600) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `VideoName`) VALUES
+(1, 'vid'),
+(2, 'video');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
