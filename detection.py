@@ -26,7 +26,15 @@ def get_center(x, y, w, h):
     return cx, cy
 
 
-cap = cv2.VideoCapture('video.mp4')
+def get_video_name():
+    db.execute("SELECT VideoName FROM videos ORDER BY id DESC LIMIT 1")
+    name = db.fetchone()
+    name = str(name).replace("(", "").replace(")", "").replace(",", "").replace("\'", "")
+    return name
+
+#  Switch between capture inputs depending on choice -> hardcoded or db select
+#  cap = cv2.VideoCapture('videos/video.mp4')
+cap = cv2.VideoCapture('videos/' + get_video_name() + '.mp4')
 object_detector = cv2.createBackgroundSubtractorMOG2(varThreshold=40)
 
 while True:
